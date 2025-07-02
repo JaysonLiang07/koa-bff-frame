@@ -1,12 +1,12 @@
-// pm2.config.js
 module.exports = {
   apps: [
     {
-      name: 'yd-app',
+      name: 'koa-bff',
       script: './app.ts',
-      instances: 1,
+      instances: 'max',
       exec_mode: 'cluster',
-      interpreter: './node_modules/.bin/ts-node', // 使用本地 ts-node
+      interpreter: 'node',
+      interpreter_args: '-r ts-node/register',  // 关键修改
       autorestart: true,
       watch: true,
       env: {
