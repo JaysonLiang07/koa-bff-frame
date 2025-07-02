@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES2024",
+    "target": "ES2020",
     "noImplicitAny": true,
     "noImplicitThis": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
+    "module": "commonjs",                    // 改为 commonjs
+    "moduleResolution": "node",              // 改为 node
     "allowSyntheticDefaultImports": true,
     "typeRoots": ["typings"],
     "baseUrl": "./",
@@ -16,5 +16,8 @@
       "@middlewares/*": ["middlewares/*"]
     }
   },
-  "include": ["**/*"]
+  "include": ["**/*"],
+  "ts-node": {
+    "esm": false                            // 添加这个
+  }
 }
